@@ -43,6 +43,163 @@ Questão 2:
 
 
 Questão 3:
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 1</title>
+        <style>
+            .titulo {
+                font-size: 32px;
+            }
+            .texto-verde{
+                color: rgb(19, 167, 19);
+            }
+            .texto-red {
+                color: rgb(214, 27, 27);
+                margin-bottom: 1px;
+            }
+            .texto-azul{
+                color: rgb(0, 0, 255);
+                margin-top: 1px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <p class="titulo">Fontes</p>
+
+        <p class="texto-verde"> 
+            "No mundo dos negócios todos são pagos com duas <br>
+            moedas: Dinheiro e Experiência... Agare a experiência <br>
+            primeiro e o dinheiro virá depois" - Harold Geenen
+        </p><br>
+
+        <p class="texto-red">
+            Há homens que lutam um dia e são bons. <br>
+            Há outros que lutam muitos dias e são melhores. </p>
+            <p class="texto-azul">
+            Mas há o que lutam todos os dias e esses são imprescindíveis. <br><br>
+            -- Bertold Brench
+        </p>
+
+    </body>
+    </html>
+
+
+Questão 4:
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 1</title>
+        <style>
+            body{
+                background-color: rgb(187, 187, 187);
+            }
+            .preto{
+                border: 2px solid black;
+            }
+            .normal{
+                border: 2px outset;
+            }
+            .titulo {
+                font-size: 45px;
+                color: rgb(0, 0, 255);
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+            }
+            .texto{
+                text-align: center;
+                font-size: larger;
+            }
+            .anjo{
+                text-align: center;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <hr class="preto">
+
+        <p class="titulo"><strong>A CONSTRUÇÃO</strong></p>
+
+        <hr class="normal">
+
+        <p class="anjo"><img src="https://sites.google.com/site/desenvolvimentowebi20121/home/quadro-de-avisos/listadeexercicios01-imagens/anjo.jpg" alt="Quadro de um anjo"></p>
+
+        <p class="texto">
+            Eles ergueram a Torre de Babel<br>
+            Para escalar o Céu,<br>
+            Mas Deus não estava lá!<br>
+            Estava ali mesmo, entre eles,<br>
+            ajudando a construir a torre.<br><br>
+            <strong>Mário Quintana</strong>
+        </p>
+        <hr class="preto">
+
+    </body>
+    </html>
+
+
+Questão 5:
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Regras e boas maneiras</title>
+        <style>
+
+            #titulo{
+                text-align: center;
+            }
+            .texto{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                text-align: justify;
+            }
+            .link{
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <h1 id="titulo">Regras de etiqueta e boas maneiras <br>
+            Quando você visita alguém no hospital
+        </h1>
+        <p class="texto">Ter um familiar ou amigo hospitalizado pode ser muito perturbador emocionalmente, e, às vezes,
+            não se pensa em certas atitudes a serem tomadas, a fim de que essa pessoa se sinta bem, e em 
+            consideração a sues sentimantos, quando de sua visita. Muitas vezes pacientes internados anseiam
+            por visitas de familiares e amogos, mas estes devem sempre se atentar a algumas coisas.
+        </p>
+
+        <p class="link"><a href="regras/regra-1.html" title="link para a 1ª regra" >Regra 1</a> 
+        <p class="link"><a href="regras/regra-2.html" title="link para a 2ª regra" >Regra 2</a> 
+        <p class="link"><a href="regras/regra-3.html" title="link para a 3ª regra" >Regra 3</a> 
+        <p class="link"><a href="regras/regra-4.html" title="link para a 4ª regra" >Regra 4</a> 
+        <p class="link"><a href="regras/regra-5.html" title="link para a 5ª regra" >Regra 5</a>
+
+    </body>
+    </html>
+
+
+
+P A R T E   2:
+
+
+
+Questão 1:
+
 
 
 
