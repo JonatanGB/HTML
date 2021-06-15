@@ -1,18 +1,102 @@
+h1, h2, h3, h4, h5, h6, p, a{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #FFFFFF;
+}
 #wrapper{
     width: 95%;
     margin: auto;
 }
 header{
+    padding: 130px 93px 74px 93px;
     text-align: center;
 }
+span img{
+    margin: 0px 0px 28px;
+}
 a {
-    
+    text-decoration: none;
+    border-bottom: dotted 1px;
+    color: #FFFFFFA6;
+    transition-property: border;
+    transition-duration: 0.5s;
+}
+a:hover{
+    border: hidden;
 }
 #nav{
-
+    padding: 18px;
+    background-color: #f7f7f7;
+    border-radius: 5px 5px 0px 0px;
+}
+ul{
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0px; 
+    text-align: center; 
+}
+li{
+    padding: 0px 23px;
+    font-size: 18px;   
+}
+img{
+    border-radius: 50%;
+}
+li a{
+    border-bottom: none;
+    color: #636363;
+}
+h1{
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 60px;
+    color: #FFFFFF;
+    margin: 0px 0px 15px;
+}
+p{
+    color: #FFFFFFA6;
+    font-size: 23px;
+    margin: 0px 0px 46px;
+}
+div.conteudo{
+    padding: 93px 93px 56px;
+}
+header.maior{
+    padding: 0px;
+    margin: 0px 0px 26px;
+}
+h2{
+    margin: 0px 0px 26px;
+    font-weight: normal;
+    color: #636363;
+    font-size: 37px;
+    text-align: left;
+}
+div.holofote{
+    background-color: #f7f7f7;
+    display: flex;
+}
+hr{
+    width: 150px;
+    color:
+        linear-gradient(to right, #1E9600, #FFF200, #FF0000);
+}
+.conteudo p{
+    color: #636363;
+}
+.maior{
+    color: #636363;
+}
+.principal-especial{
+    background-color: #f7f7f7;
 }
 .active{
 
+}
+.features{
+    display: flex;
+    flex-flow: column wrap;
 }
 #principal{
 
@@ -24,7 +108,9 @@ a {
 
 }
 .botao{
-
+    font-size: 18px;
+    padding: 5px 28px;
+    border: 1px solid #d6d6d6;
 }
 .alt{
 
@@ -39,3 +125,7 @@ body{
     background-image:
         linear-gradient(to bottom, #5f4f93, #dd7682);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+linear-gradient(to right, #1E9600, #FFF200, #FF0000)
