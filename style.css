@@ -1,6 +1,12 @@
-h1, h2, h3, h4, h5, h6, p, a{
+h1, h2, h4, h5, h6, p, a{
     font-family: 'Source Sans Pro', sans-serif;
     color: #FFFFFF;
+}
+h3{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 23px;
+    font-weight: normal;
+    color: #636363;
 }
 #wrapper{
     width: 95%;
@@ -10,13 +16,37 @@ header{
     padding: 130px 93px 74px 93px;
     text-align: center;
 }
-span img{
-    margin: 0px 0px 28px;
+#intro{
+    padding: 93px 93px 56px;
+}
+.main{
+    background-color: #f7f7f7;
+}
+.stelar{
+    color: #FFFFFF;
+    font-size: 23px;
+    opacity: 0%;
+    animation-name: apareceTexto;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+.stelarT{
+    color: #FFFFFF;
+    opacity: 0%;
+    animation-name: apareceTexto;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+.img{
+    padding: 12px;
+    margin-left: 74px;
 }
 a {
     text-decoration: none;
     border-bottom: dotted 1px;
-    color: #FFFFFFA6;
+    color: #FFFFFF;
     transition-property: border;
     transition-duration: 0.5s;
 }
@@ -24,17 +54,17 @@ a:hover{
     border: hidden;
 }
 #nav{
-    padding: 18px;
+    padding: 18.6px;
     background-color: #f7f7f7;
     border-radius: 5px 5px 0px 0px;
+    text-align: center;
 }
 ul{
     display: flex;
-    flex-flow: row wrap;
     list-style: none;
     padding: 0px;
     margin: 0px; 
-    text-align: center; 
+    display: inline-flex;    
 }
 li{
     padding: 0px 23px;
@@ -47,6 +77,10 @@ li a{
     border-bottom: none;
     color: #636363;
 }
+.magna{
+    font-weight: 300;
+    text-align: center;
+}
 h1{
     text-decoration: none;
     font-family: 'Source Sans Pro', sans-serif;
@@ -55,12 +89,12 @@ h1{
     margin: 0px 0px 15px;
 }
 p{
-    color: #FFFFFFA6;
-    font-size: 23px;
+    color: #636363;
+    font-size: 18px;
     margin: 0px 0px 46px;
 }
 div.conteudo{
-    padding: 93px 93px 56px;
+    
 }
 header.maior{
     padding: 0px;
@@ -77,26 +111,41 @@ div.holofote{
     background-color: #f7f7f7;
     display: flex;
 }
+
 hr{
+    padding: 1px;
+    border: none;
+    margin: 0px;
     width: 150px;
-    color:
-        linear-gradient(to right, #1E9600, #FFF200, #FF0000);
+    background-image:
+        linear-gradient(to right, #efa8b0, #a89cc8, #8cc9f0);
+}
+.hr{
+    display: flex;
+    align-content: space-around;
 }
 .conteudo p{
     color: #636363;
 }
 .maior{
     color: #636363;
+    text-align: center;
 }
 .principal-especial{
     background-color: #f7f7f7;
+    border-top: solid 1px #dddddd;
 }
 .active{
 
 }
 .features{
     display: flex;
-    flex-flow: column wrap;
+}
+.features p{
+    text-align: center;
+}
+.features h3{
+    text-align: center;
 }
 #principal{
 
@@ -116,16 +165,96 @@ hr{
 
 }
 .icones{
-
+    font-size: 30px;
 }
 .copyright{
 
 }
+.logo{
+    margin: 0px;
+    animation-name: apareceFoguete;
+    animation-duration: 1.25s;
+}
 body{
+    padding: 0px 80px;
     background-image:
-        linear-gradient(to bottom, #5f4f93, #dd7682);
+        linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+}
+#code{
+    font-size: 100px;
+    padding: 12px 5px;
+    border: solid 1px #e0e0e0;
+    border-radius: 100%;
+    color: #efa8b0
+}
+#file{
+    font-size: 100px;
+    padding: 12px 23.75px;
+    border: solid 1px #e0e0e0;
+    border-radius: 100%;
+    color: #a89cc8
+}
+#primeiro{
+    padding: 93px 93px 56px;
+}
+#dima{
+    
+    font-size: 100px;
+    padding: 17.5px 11.25px;
+    border: solid 1px #e0e0e0;
+    border-radius: 100%;
+    color: #8cc9f0
+}
+.estilo1{
+    background-color: #efa8b0;
+    font-size: 37px;
+    border-radius: 8px 0px 0px 8px;
+    padding: 28px;
+}
+.estilo1 i{
+    color: #ffffff;
+    font-size: 40px;
+    display: flex;
+;
+}
+strong{
+    font-weight: none;
+    color: #ffffff;
+    text-decoration: none;
+}
+.estilo2{
+    background-color: #c79cc8;
+}
+.estilo3{
+    background-color: #a89cc8;
+}
+.estilo4{
+    background-color: #9bb2e1;
+}
+.estilo5{
+    background-color: #8cc9f0;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+@keyframes apareceFoguete{
+    from{
+        opacity: 0%;
+        
+    }
+    to{
+        opacity: 100%;
+        
+    }
+}
+
+@keyframes apareceTexto{
+    from{
+        opacity: 0%
+    }
+    to{
+        opacity: 100%;
+    }
+}
 
 linear-gradient(to right, #1E9600, #FFF200, #FF0000)
