@@ -1,0 +1,50 @@
+.cidades{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+div{
+    padding-left: 100px;
+    
+}
+img{
+    border-radius: 100%;
+    width: 55%;
+}
+.header{
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    box-shadow: 3px 5px 3px rgb(210, 210, 210);
+
+}
+li{
+    list-style: none;
+    padding: 20px;
+}
+.plano{
+    font-size: 35px;
+    margin-right: 620px;
+    display: flex;
+    align-items: center;
+}
+.home{
+    font-size: 25px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+.items{
+    font-size: 25px;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}

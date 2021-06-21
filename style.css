@@ -120,9 +120,8 @@ hr{
     background-image:
         linear-gradient(to right, #efa8b0, #a89cc8, #8cc9f0);
 }
-.hr{
-    display: flex;
-    align-content: space-around;
+.magna{
+    margin: auto;
 }
 .conteudo p{
     color: #636363;
@@ -185,14 +184,16 @@ body{
     padding: 12px 5px;
     border: solid 1px #e0e0e0;
     border-radius: 100%;
-    color: #efa8b0
+    color: #efa8b0;
 }
 #file{
     font-size: 100px;
     padding: 12px 23.75px;
     border: solid 1px #e0e0e0;
     border-radius: 100%;
-    color: #a89cc8
+    color: #a89cc8;
+    display: flex;
+    justify-content: center;
 }
 #primeiro{
     padding: 93px 93px 56px;
@@ -203,19 +204,21 @@ body{
     padding: 17.5px 11.25px;
     border: solid 1px #e0e0e0;
     border-radius: 100%;
-    color: #8cc9f0
+    color: #8cc9f0;
+}
+.estatisticas li{
+    padding: 28px;
+    text-align: center;
 }
 .estilo1{
     background-color: #efa8b0;
     font-size: 37px;
     border-radius: 8px 0px 0px 8px;
-    padding: 28px;
 }
 .estilo1 i{
     color: #ffffff;
     font-size: 40px;
-    display: flex;
-;
+    display: inline-block;
 }
 strong{
     font-weight: none;
@@ -224,15 +227,42 @@ strong{
 }
 .estilo2{
     background-color: #c79cc8;
+    font-size: 40px;
+}
+.estilo2 i{
+    color: #ffffff;
+    font-size: 40px;
+    display: flex;
 }
 .estilo3{
     background-color: #a89cc8;
+    font-size: 40px;
+    display: inline-block;    
+}
+.estilo3 i{
+    color: #ffffff;
+    font-size: 40px;
+    display: flex;
 }
 .estilo4{
     background-color: #9bb2e1;
+    font-size: 40px;
+    display: inline-block;
+}
+.estilo4 i{
+    color: #ffffff;
+    font-size: 40px;
+    display: flex;
 }
 .estilo5{
     background-color: #8cc9f0;
+    font-size: 40px;
+    display: inline-block;
+}
+.estilo5 i{
+    color: #ffffff;
+    font-size: 40px;
+    display: flex;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
