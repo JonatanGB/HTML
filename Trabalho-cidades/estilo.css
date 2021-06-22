@@ -14,30 +14,21 @@ img{
     border-radius: 5%;
 }
 
-.roma{
-    height: 100px;
+.intro{
+    height: 150px;
 }
 .div-roma{
     padding: 30px 50px 10px 50px;
     background-image: linear-gradient(90deg, #efa8b0 80%, #c79cc8 );
     border-radius: 10px 0px 0px 10px;
 }
-.atena{
-    height: 100px;
-}
 .div-atena{
     padding: 30px 50px 10px 50px;
     background-image: linear-gradient(90deg, #c79cc8 80%, #a89cc8);
 }
-.veneza{
-    height: 100px;
-}
 .div-veneza{
     padding: 30px 50px 10px 50px;
     background-image: linear-gradient(90deg, #a89cc8 80%, #9bb2e1);
-}
-.tokio{
-    height: 100px;
 }
 .div-tokio{
     padding: 30px 50px 10px 50px;
