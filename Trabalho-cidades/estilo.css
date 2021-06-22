@@ -1,22 +1,59 @@
+p{
+    text-align: justify;
+    font-size: 20px;
+}
+.centro{
+    text-align: center;
+}
 .cidades{
     display: flex;
     justify-content: center;
     text-align: center;
 }
-div{
-    padding-left: 100px;
-    
-}
 img{
-    border-radius: 100%;
-    width: 55%;
+    border-radius: 5%;
+}
+
+.roma{
+    height: 100px;
+}
+.div-roma{
+    padding: 30px 50px 10px 50px;
+    background-image: linear-gradient(90deg, #efa8b0 80%, #c79cc8 );
+    border-radius: 10px 0px 0px 10px;
+}
+.atena{
+    height: 100px;
+}
+.div-atena{
+    padding: 30px 50px 10px 50px;
+    background-image: linear-gradient(90deg, #c79cc8 80%, #a89cc8);
+}
+.veneza{
+    height: 100px;
+}
+.div-veneza{
+    padding: 30px 50px 10px 50px;
+    background-image: linear-gradient(90deg, #a89cc8 80%, #9bb2e1);
+}
+.tokio{
+    height: 100px;
+}
+.div-tokio{
+    padding: 30px 50px 10px 50px;
+    background-image: linear-gradient(90deg, #9bb2e1 80%, #8cc9f0);
+}
+.div-roma2{
+    padding: 30px 50px 10px 50px;
+    background-image: linear-gradient(90deg, #8cc9f0, #90ecdd);
+    border-radius: 0px 10px 10px 0px;
 }
 .header{
     background-color: rgb(221, 221, 221);
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     box-shadow: 3px 5px 3px rgb(210, 210, 210);
 
 }
@@ -26,7 +63,8 @@ li{
 }
 .plano{
     font-size: 35px;
-    margin-right: 620px;
+    margin-right: auto;
+    padding-left: 150px;
     display: flex;
     align-items: center;
 }
@@ -42,9 +80,31 @@ li{
     display: flex;
     align-items: center;
 }
-
+.fontana{
+    grid-template-columns: 4fr 1fr;
+}
+.panteao-roma{
+    grid-template-columns: 1fr 4fr;
+}
+strong{
+    font-size: 35px;
+}
 
 a{
     text-decoration: none;
     color: black;
+}
+body{
+    background-image:
+        linear-gradient( #ffffff, #666666);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+.body-italia{
+    padding: 0px 10px;
+    background-image: 
+        linear-gradient(90deg, #98e29c, #ffffff, #ca9c9c);
+}
+.body-atena{
+    background-image: linear-gradient(to bottom, #ffffff 70%, #b8e9ff);
 }
