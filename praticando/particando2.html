@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos no Scroll</title>
-    <style>
-        div {
-            position: fixed;            
-            top: 10px;
-        }
+    <head>
+        <style>
+            .campo {
+                position: relative;
+                width: 600px;
+                height: 300px;
+                background-color: green;
+                border: 10px solid black;
+            }
 
-        .p {
-            margin-top: 5000px;
-        }
-        .top{
-            border: 1px solid black;
-            border-radius: 50%;
-            margin-top: -4100px;
-            margin-left: 90%;
-            padding: 10px;
-            position: fixed;
-        }
-        .esconde{
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <p class="top"><a href="#">top</a></p>
-    <div class="mostrar-scroll">0px</div>
-    <p class="p">Escondido</p>
+            .bola {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-color: white;
+                border-radius: 100%;
+                transition: all 60s;
+                top: 0px;
+                left: 0px;
 
-    <script>
+            }
+        </style>
+    </head>
+    <body>
+        <div class="campo">
+            <div class="bola"></div>
+        </div>
+        <script>
 
-        window.addEventListener("scroll", () => {
-            document.querySelector(".mostrar-scroll").textContent = window.pageYOffset + "px"
+        let bola = document.querySelector(".bola")
+        let campo = document.querySelector(".campo")
+        campo.addEventListener("click", (event) => {
+            
+            let mouseX = event.clientX
+            let mouseY = event.clientY
+            if(mouseX + 20 > 627){
+                mouseX = 610
+            }
+            if(mouseX - 20 < 10){
+                mouseX = 30
+            }
+            if(mouseY + 20 > 326){
+                mouseY = 310
+            }
+            if(mouseY - 20 < 10){
+                mouseY = 30
+            }
+            desloca(mouseX, mouseY)
         })
 
+        function desloca(mouX, mouY){
+            bola.style.left = (mouX - 40) + "px"
+            bola.style.top = (mouY - 40) + "px"
+        }
 
-    </script>
-</body>
+        </script>
+    </body>
 </html>
