@@ -1,60 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <style>
-            .campo {
-                position: relative;
-                width: 600px;
-                height: 300px;
-                background-color: green;
-                border: 10px solid black;
-            }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
 
-            .bola {
-                position: absolute;
-                width: 40px;
-                height: 40px;
-                background-color: white;
-                border-radius: 100%;
-                transition: all 60s;
-                top: 0px;
-                left: 0px;
+    </style>
+</head>
+<body>
+    <form>
+        Inicial
+        <input type="number" name="inicial" id="inicial" value="1000"><br><br>
 
-            }
-        </style>
-    </head>
-    <body>
-        <div class="campo">
-            <div class="bola"></div>
-        </div>
-        <script>
+        Juros
+        <input type="number" name="juros" id="juros" value="5"><br><br>
 
-        let bola = document.querySelector(".bola")
-        let campo = document.querySelector(".campo")
-        campo.addEventListener("click", (event) => {
-            
-            let mouseX = event.clientX
-            let mouseY = event.clientY
-            if(mouseX + 20 > 627){
-                mouseX = 610
-            }
-            if(mouseX - 20 < 10){
-                mouseX = 30
-            }
-            if(mouseY + 20 > 326){
-                mouseY = 310
-            }
-            if(mouseY - 20 < 10){
-                mouseY = 30
-            }
-            desloca(mouseX, mouseY)
-        })
+        Mêses
+        <input type="number" name="meses" id="meses" value="12">
+    </form>
+    <p class="resultado">Resultao: R$ 0,00</p> 
+    <script>
 
-        function desloca(mouX, mouY){
-            bola.style.left = (mouX - 40) + "px"
-            bola.style.top = (mouY - 40) + "px"
+        let inicial = document.querySelector("#inicial")
+        let juros = document.querySelector("#juros")
+        let meses = document.querySelector("#meses")
+        let resultado = document.querySelector(".resultado")
+
+        meses = meses /12 
+
+        function calcula(i, j, a){
+            let din = Math.round(i * (1 + (j / 100) * (a / 12)))
+            console.log(din)
         }
 
-        </script>
-    </body>
+        inicial.addEventListener("input", (event) => {
+            console.log(inicial.)
+        })
+
+    </script>
+</body>
 </html>
