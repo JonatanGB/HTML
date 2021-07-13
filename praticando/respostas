@@ -1,0 +1,28 @@
+    <form>
+        Inicial
+        <input type="number" name="inicial" id="inicial" value="1000"><br><br>
+
+        Juros
+        <input type="number" name="juros" id="juros" value="5"><br><br>
+
+        Mêses
+        <input type="number" name="meses" id="meses" value="12">
+    </form>
+    <p class="resultado">Resultao: R$ 0,00</p> 
+    <script>
+
+let inicial = document.querySelector("#inicial")
+        let juros = document.querySelector("#juros")
+        let meses = document.querySelector("#meses")
+        let resultado = document.querySelector(".resultado")
+
+        meses = meses /12 
+
+        function calcula(i, j, a){
+            let din = Math.round(i * (1 + (j / 100) * (a / 12)))
+            console.log(din)
+        }
+
+        inicial.addEventListener("input", (event) => {
+            console.log(inicial.)
+        })

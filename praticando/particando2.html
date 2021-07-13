@@ -1,43 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Form validation: Tarefa 1</title>
+        <style>
 
-    </style>
-</head>
-<body>
-    <form>
-        Inicial
-        <input type="number" name="inicial" id="inicial" value="1000"><br><br>
+            .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            }
 
-        Juros
-        <input type="number" name="juros" id="juros" value="5"><br><br>
+            .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            }
 
-        Mêses
-        <input type="number" name="meses" id="meses" value="12">
-    </form>
-    <p class="resultado">Resultao: R$ 0,00</p> 
+            .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <button id="botao">Open Modal</button>
+
+        <div id="mdl" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="text" name="input" id="input"><br>
+            <button class="ok">ok</button><button class="cancelar">cancelar</button>
+        </div>
+
+        </div>
+
     <script>
 
-        let inicial = document.querySelector("#inicial")
-        let juros = document.querySelector("#juros")
-        let meses = document.querySelector("#meses")
-        let resultado = document.querySelector(".resultado")
+        let modal = document.querySelector("#mdl");
 
-        meses = meses /12 
+        let botao = document.querySelector("#botao");
 
-        function calcula(i, j, a){
-            let din = Math.round(i * (1 + (j / 100) * (a / 12)))
-            console.log(din)
-        }
+        let span = document.getElementsByClassName("close")[0];
 
-        inicial.addEventListener("input", (event) => {
-            console.log(inicial.)
+        let ok = document.querySelector(".ok")
+
+        let cancela = document.querySelector(".cancelar")
+
+        let input = document.querySelector("#input")
+
+
+        botao.addEventListener("click", () => {
+            modal.style.display = "block"
+            input.focus()
+        })
+
+        span.addEventListener("click", () => {
+            modal.style.display = "none"
+        })
+
+        window.addEventListener("click", (event) => {
+            if (event.target == modal) {
+                span.click()
+            }
+        })
+
+        input.addEventListener("keydown", (event) => {
+            if(event.key == "Enter") ok.click()
+            else if(event.key == "Escape") cancela.click()
+        })
+
+        ok.addEventListener("click", (event) => { 
+            alert("Você escreveu: " + document.querySelector("#input").value)
+            span.click()
+        })
+
+        cancela.addEventListener("click", (event) => {
+            alert("Voce ecapou")
+            span.click()
         })
 
     </script>
-</body>
+  </body>
 </html>
