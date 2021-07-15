@@ -101,6 +101,16 @@
             span.click()
         })
 
+        let hj = new Date(2010, 10, 5, 18, 35)
+        
+        function quandoFoi(data){
+            let agora = new Date()
+            if(agora.getTime() - 1000 < data.getTime()) console.log("Foi agora")
+            else if(agora.getTime() -60000 < data.getTime()) console.log(`${Math.floor((agora.getTime() - data.getTime())/1000)} segundos atras`)
+            else if (agora.getTime() - 3600000 < data.getTime()) console.log(`${Math.floor((agora.getTime() - data.getTime())/60000)} minutos atras`)
+            else console.log(`${data.getDate()}.${data.getMonth()}.${data.getFullYear()} ${data.getHours()}:${data.getMinutes()}`)
+        }
+
     </script>
   </body>
 </html>
