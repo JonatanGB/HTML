@@ -58,58 +58,76 @@
 
     <script>
 
-        let modal = document.querySelector("#mdl");
-
-        let botao = document.querySelector("#botao");
-
-        let span = document.getElementsByClassName("close")[0];
-
-        let ok = document.querySelector(".ok")
-
-        let cancela = document.querySelector(".cancelar")
-
-        let input = document.querySelector("#input")
-
-
-        botao.addEventListener("click", () => {
-            modal.style.display = "block"
-            input.focus()
-        })
-
-        span.addEventListener("click", () => {
-            modal.style.display = "none"
-        })
-
-        window.addEventListener("click", (event) => {
-            if (event.target == modal) {
-                span.click()
+        class Aluno{
+            
+            constructor(matricula, nome, n1, n2, t1) {
+                this.matricula = matricula
+                this. nome = nome
+                this.n1 = n1
+                this.n2 = n2
+                this.t1 = t1
             }
-        })
 
-        input.addEventListener("keydown", (event) => {
-            if(event.key == "Enter") ok.click()
-            else if(event.key == "Escape") cancela.click()
-        })
+            media(){
+                let mediaFinal = (this.n1*3 + this.n2*3 + this.t1*2) / 8
+                return +mediaFinal.toFixed(2)
+            }
 
-        ok.addEventListener("click", (event) => { 
-            alert("Você escreveu: " + document.querySelector("#input").value)
-            span.click()
-        })
+            final(){
+                if(this.media() < 7) return "reprovado"
+                return "aprovado"
+            }
 
-        cancela.addEventListener("click", (event) => {
-            alert("Voce ecapou")
-            span.click()
-        })
-
-        let hj = new Date(2010, 10, 5, 18, 35)
-        
-        function quandoFoi(data){
-            let agora = new Date()
-            if(agora.getTime() - 1000 < data.getTime()) console.log("Foi agora")
-            else if(agora.getTime() -60000 < data.getTime()) console.log(`${Math.floor((agora.getTime() - data.getTime())/1000)} segundos atras`)
-            else if (agora.getTime() - 3600000 < data.getTime()) console.log(`${Math.floor((agora.getTime() - data.getTime())/60000)} minutos atras`)
-            else console.log(`${data.getDate()}.${data.getMonth()}.${data.getFullYear()} ${data.getHours()}:${data.getMinutes()}`)
         }
+
+
+
+        class pessoa{
+            
+            constructor(nome, tele){
+                this.nome = nome
+                this.telefone = tele
+            }
+        }
+
+        class Agenda{
+
+            #lista
+
+            constructor(){
+                this.#lista = []
+            }
+
+            armazenaPessoa(nome, tele){
+                let pesoa = new pessoa(nome, tele)
+                if(this.#lista.length >= 10) console.log("Muita pessoa, não deu.")
+                else this.#lista.push(pesoa)
+            }
+            
+            removePessoa(name){
+                for(let i = 0; i < this.#lista.length; i++){
+                    let pessoa = this.#lista[i]
+                    if(pessoa.nome == name) this.#lista.splice(i, 1)
+                }
+            }
+
+            //buscaPessoa(nome)
+
+            //imprimeAgenda()
+
+            //imprimePessoa(indice)
+        }
+
+
+
+        class Voo{
+            
+            constructor(numero, data){
+                this.numero = numero
+                this.data = data
+            }
+        }
+
 
     </script>
   </body>
