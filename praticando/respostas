@@ -1,3 +1,4 @@
+{
     <form>
         Inicial
         <input type="number" name="inicial" id="inicial" value="1000"><br><br>
@@ -26,7 +27,7 @@
         inicial.addEventListener("input", (event) => {
             console.log(inicial.)
         })
-
+}
 
 
 {
@@ -49,3 +50,168 @@ set:
             }
             return noRepeat
         }
+
+
+Aula 42:
+    propriedades estaticas:
+            /*
+                    class ponto2d{
+                constructor (x, y){
+                    this.coorX = x
+                    this.coorY = y
+                }
+
+                static temEixoComum(pontoA, pontoB){
+                    if (pontoA.coorX == pontoB.coorX || pontoA.coorY == pontoB.coorY) return true
+                    return false
+                }
+            }
+
+            let opa = new ponto2d(5, 9)
+            let oba = new ponto2d(5, 9)
+            console.log(ponto2d.temEixoComum(opa, oba))
+            */
+
+            /*
+                    class Calc{
+                static soma(A, B){
+                    return A + B
+                }
+                
+                static subtracao(A, B){
+                    return A - B
+                }
+
+                static multiplicacao(A, B){
+                    return A * B
+                }
+
+                static divisao(A, B){
+                    return A / B
+                }
+
+            }
+            */
+
+
+    polimorfismo:
+            class Produto{
+
+                #descricao
+
+                constructor(nomeLoja, preço, descrição){
+                    this.nomeLoja = nomeLoja
+                    this.preço = preço
+                    this.#descricao = "produto de informatica"
+                }
+
+                get descricao(){
+                    return this.#descricao
+                }
+
+                getDescrição(){
+                    return this.descricao
+                }
+            }
+
+            class Mouse extends Produto{
+                constructor(nomeLoja, preço, descrição, tipo){
+                    super(nomeLoja, preço, descrição),
+                    this.tipo = tipo
+                }
+
+                getDescrição(){
+                    return this.descricao + " " + this.tipo
+                }
+
+            }
+
+
+            class Livro extends Produto{
+                constructor(nomeLoja, preço, descrição, autor){
+                    super(nomeLoja, preço)
+                    this.descricao = descrição
+                    this.autor = autor
+                }
+                
+                getDescrição(){
+                    return this.descricao + ", de " + this.autor
+                }
+
+            }
+
+            let pc = new Produto("loja", 12)
+            let rato = new Mouse("Kabum", 50, "Mouse ótico, Saída USB. 1.600 dpi", "Gamer")
+            let Percy = new Livro("Submarino", 57, "Livro muito bom", "Rick Riordan")
+            let ligeirinho = new Mouse("mercado Livre", 14, "Mouse barato que de durar 5 dias", "barato")
+            let apolo = new Livro("Americanas", 60, "As provações de apolo: a torre de Nero", "Rick")
+
+            let carrinho = [pc, rato, Percy, ligeirinho, apolo]
+
+            console.log(carrinho[0].getDescrição())
+            console.log(carrinho[1].getDescrição())
+            console.log(carrinho[2].getDescrição())
+            console.log(carrinho[3].getDescrição())
+            console.log(carrinho[4].getDescrição())
+
+
+    erro:
+            function somar(n1, n2){
+            let soma = n1 + n2
+            if(soma % 2 == 0) {
+                throw new OddNumberError("o número é par")
+            } else console.log(soma)
+            console.log("finalizando programa")
+        }
+
+        class OddNumberError extends Error{
+            constructor(message){
+                super(message)
+                this.name = "OddNumberError"
+            }
+        }
+
+        try{
+            somar(1, 2)
+            somar(1, 1)
+        } catch(erro){
+            console.log(erro)
+        } finally {
+            console.log("finalizando programa")
+        }
+
+
+
+
+
+
+
+
+
+\ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+ \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+  \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+   \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+    \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+     \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+      \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+       \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+        \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+         \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+          \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+           \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+            \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+             \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+              \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+               \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+                \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+                 \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+                  \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+                   \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+                    \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+                     \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+                      \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+                       \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+                        \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+                         \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
+                          \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
