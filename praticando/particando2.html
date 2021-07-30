@@ -58,75 +58,89 @@
 
     <script>
 
-        class Aluno{
-            
-            constructor(matricula, nome, n1, n2, t1) {
-                this.matricula = matricula
-                this. nome = nome
-                this.n1 = n1
-                this.n2 = n2
-                this.t1 = t1
+    /*
+        3) Crie uma função obtemUsuarioPeloNome(nome, cb) e verifica após 3 segundos se o nome faz parte do vetor:
+        [
+            {
+                nome: "João",
+                idade: 25,
+                email: "joao@email.com"
+            },
+            {
+                nome: "Pedro",
+                idade: 33,
+                email: "pedro@email.com"
+            },
+            {
+                nome: "Marcos",
+                idade: 16,
+                email: "marcos@email.com"
             }
+        ]
+        
+        Se o nome informado não estiver no vetor a função deverá chamar a callback passando um UserNotFoundError com a mensagem "Usuário não está cadastrado".
+        Caso o nome informado esteja cadastrado na lista a callback deve ser chamada passando as informações do usuário com aquele nome.
 
-            media(){
-                let mediaFinal = (this.n1*3 + this.n2*3 + this.t1*2) / 8
-                return +mediaFinal.toFixed(2)
+        cb(error) -> Ocorreu um erro! [mensagem do erro]
+        cb(success) -> Usuário encontrado: 
+                       nome: [nome do usuário]
+                       idade: [idade do usuário]
+                       email: [email do usuário]
+    */
+
+
+            let vetor =         [
+            {
+                nome: "João",
+                idade: 25,
+                email: "joao@email.com"
+            },
+            {
+                nome: "Pedro",
+                idade: 33,
+                email: "pedro@email.com"
+            },
+            {
+                nome: "Marcos",
+                idade: 16,
+                email: "marcos@email.com"
             }
+        ]
 
-            final(){
-                if(this.media() < 7) return "reprovado"
-                return "aprovado"
-            }
+        function obtemUsuarioPeloNome(nome, cb){
+            setTimeout(() => {
+                let usuario = vetor.find(pessoa => pessoa.nome === nome)
 
-        }
-
-
-
-        class pessoa{
-            
-            constructor(nome, tele){
-                this.nome = nome
-                this.telefone = tele
-            }
-        }
-
-        class Agenda{
-
-            #lista
-
-            constructor(){
-                this.#lista = []
-            }
-
-            armazenaPessoa(nome, tele){
-                let pesoa = new pessoa(nome, tele)
-                if(this.#lista.length >= 10) console.log("Muita pessoa, não deu.")
-                else this.#lista.push(pesoa)
-            }
-            
-            removePessoa(name){
-                for(let i = 0; i < this.#lista.length; i++){
-                    let pessoa = this.#lista[i]
-                    if(pessoa.nome == name) this.#lista.splice(i, 1)
+                if(!usuario){
+                    callback(new UserNotFoundError("Usuário não está cadastrado"))
+                } else{
+                    callback(null, usuario)
                 }
-            }
-
-            //buscaPessoa(nome)
-
-            //imprimeAgenda()
-
-            //imprimePessoa(indice)
+            }, 3000)
         }
 
-
-
-        class Voo{
-            
-            constructor(numero, data){
-                this.numero = numero
-                this.data = data
+        function callback(erro, user){
+            if (erro){
+                console.log(`Ocorreu um erro! ${erro.message}`)
+            } else{
+                console.log(user.nome)
+                console.log(user.idade)
+                console.log(user.email)
             }
         }
+        
+        class UserNotFoundError extends Error{
+            constructor(mensagem){
+                super(mensagem)
+                this.name = "UserNotFoundError"
+            }
+        }
+
+        obtemUsuarioPeloNome("João", callback)
+
+        
+
+
 
 
     </script>

@@ -181,37 +181,115 @@ Aula 42:
         }
 
 
+    erroDobrar:
+        function dobrar(n){
+            if (n.toString() === n) throw new TypeError("O valor deve ser numérico")
+            return n * 2
+        } 
+
+
+        try {
+            console.log(dobrar(4))
+            console.log(dobrar(5))
+        } catch (error) {
+            console.log(error)
+        } finally{
+            console.log("Finalizando programa")
+        }
+
+
+    erroUsuario:
+            class NameLengthError extends Error{
+            constructor(mensagem){
+                super(mensagem)
+                this.name = "NameLengthError"
+            }
+        }
+
+        class EmailError extends Error{
+            constructor(mensagem){
+                super(mensagem)
+                this.name = "EmailError"
+            }
+        }
+
+        class WageError extends Error{
+            constructor(mensagem){
+                super(mensagem)
+                this.name = "WageError"
+            }
+        }
+
+        class User{
+            constructor(nome, mail, salario){
+                this.nome = nome
+                this.email = mail
+                this.salario = salario
+            }
+        }
+
+
+        function validaUsuario(user){
+            if (user.nome.length < 4) throw new NameLengthError("O nome deve ter no mínimo 4 caracteres")
+            if (!user.email.includes("@")) throw new EmailError("O email precisa ser válido")
+            if (user.salario < 465) throw new WageError("O salário precisa ser no mínimo R$ 465,00")
+            return "O usuario é valido"
+        }
+        let nomeErr = new User("oba", "email@google", 900)
+        let mailErr = new User("oooooooo", "email", 894)
+        let salaErr = new User("bom dia", "email@quentemail", 200)
+
+
+    callback:
+            function dobrarEm5Segundos(numero, cb){
+            if(isNaN(numero)){
+                cb(new Error(`Insira um número.`), 3)
+            } else{
+                setTimeout(() => {
+                let resultado = numero * 2
+                cb(null, resultado)
+            }, 5000)
+            }
+        }
+
+        function callback(erro, resultado){
+            if(erro){
+                console.log(`A operação falhou! ${erro.message}`)
+            } else{
+                console.log(`A operação foi um grandioso sucesso!!! O resultado é ${resultado}`)
+            }
+        }
+
+
+    callback3:
+            function obtemUsuarioPeloNome(nome, cb){
+                setTimeout(() => {
+                    let usuario = vetor.find(pessoa => pessoa.nome === nome)
+
+                    if(!usuario){
+                        callback(new UserNotFoundError("Usuário não está cadastrado"))
+                    } else{
+                        callback(null, usuario)
+                    }
+                }, 3000)
+            }
+
+            function callback(erro, user){
+                if (erro){
+                    console.log(`Ocorreu um erro! ${erro.message}`)
+                } else{
+                    console.log(user.nome)
+                    console.log(user.idade)
+                    console.log(user.email)
+                }
+            }
+            
+            class UserNotFoundError extends Error{
+                constructor(mensagem){
+                    super(mensagem)
+                    this.name = "UserNotFoundError"
+                }
+            }
 
 
 
-
-
-
-
-\ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
- \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-  \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-   \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-    \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-     \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-      \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-       \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-        \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-         \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-          \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-           \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-            \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-             \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-              \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-               \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-                \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-                 \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-                  \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-                   \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-                    \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-                     \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-                      \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-                       \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-                        \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-                         \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | | 
-                          \ \   abcdefghijklmnopqrstuvwxyz | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
