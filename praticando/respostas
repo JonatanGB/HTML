@@ -293,3 +293,97 @@ Aula 42:
 
 
 
+    Aula 44, promisse:
+
+
+        promise-ObtemUsuario:
+                function obtemUsuarioPeloNome(nome){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                    let usuario = vetor.find(pessoa => pessoa.nome === nome)
+
+                    if(!usuario){
+                        reject(new UserNotFoundError("Usuário não está cadastrado"))
+                    } else{
+                        resolve(usuario)
+                    }
+                }, 3000)
+                })
+
+
+        promise-Dobrar:
+            function dobrarEm5Segundos(numero){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                    if (isNaN(numero)) {
+                        reject(new TypeError("O valor precisa ser numérico"));
+                    } else {
+                        const dobro = numero * 2;
+                        resolve(dobro);
+                    }
+                    }, 5000);
+                })
+            }
+
+
+        wait-ObtemUsuario:
+                function obtemUsuarioPeloNome(nome){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                    let usuario = vetor.find(pessoa => pessoa.nome === nome)
+
+                    if(!usuario){
+                        reject(new UserNotFoundError("Usuário não está cadastrado"))
+                    } else{
+                        resolve(usuario)
+                    }
+                }, 3000)
+                })
+            }
+
+            class UserNotFoundError extends Error{
+                constructor(mensagem){
+                    super(mensagem)
+                    this.name = "UserNotFoundError"
+                }
+            }
+
+
+            async function obtendo(){
+            try{
+                let name = await obtemUsuarioPeloNome("Mar")
+
+                console.log(`nome: ${name.nome}\nidade: ${name.idade}\nemail: ${name.email}`)
+            } catch(erro){
+                console.log(`Ocorreu um erro! ${erro.message}`)
+            }}
+
+            obtendo()
+
+
+        wait-Dobrar:
+                function dobrarEm5Segundos(numero){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                    if (isNaN(numero)) {
+                        reject(new TypeError("O valor precisa ser numérico"));
+                    } else {
+                        const dobro = numero * 2;
+                        resolve(dobro);
+                    }
+                    }, 5000);
+                })
+            }
+
+            async function espera(){
+                try {
+                    let result = await dobrarEm5Segundos("a")
+
+                    console.log(result)
+                } catch (erro) {
+                    console.log(`Ocurreu um erro! ${erro.message}`)
+                }
+            }
+            espera()
+
+ 
