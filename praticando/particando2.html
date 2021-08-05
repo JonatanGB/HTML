@@ -88,29 +88,8 @@
                        email: [email do usuário]
     */
 
-            function dobrarEm5Segundos(numero){
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                    if (isNaN(numero)) {
-                        reject(new TypeError("O valor precisa ser numérico"));
-                    } else {
-                        const dobro = numero * 2;
-                        resolve(dobro);
-                    }
-                    }, 5000);
-                })
-            }
 
-            async function espera(){
-                try {
-                    let result = await dobrarEm5Segundos("a")
 
-                    console.log(result)
-                } catch (erro) {
-                    console.log(`Ocurreu um erro! ${erro.message}`)
-                }
-            }
-            espera()
         
 
 

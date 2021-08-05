@@ -387,3 +387,28 @@ Aula 42:
             espera()
 
  
+        Validar nomes:
+            const fs = require("fs");
+            const fsPromises = require("fs/promises");
+            const path = require("path");
+            const { EOL } = require("os")
+            (async () => {
+                try {
+                    const file = await fsPromises.readFile(path.resolve(__dirname, "exercicioNomes.txt"));
+                    let nomes = file.toString("utf-8")
+                    console.log(validar(nomes))
+                } catch (err) {
+                    console.log(err.message);
+                }
+            })();
+
+            function validar(nomes){ 
+                let vetor = nomes.split("\r\n")
+                let nomesValidos = []
+                for (let i = 0; i < vetor.length; i++) {
+                    if(vetor[i][0] == "A"){
+                        nomesValidos.push(vetor[i])
+                    }
+                }
+                return nomesValidos
+            }

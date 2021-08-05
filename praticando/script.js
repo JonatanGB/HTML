@@ -108,3 +108,43 @@
 
 
     */
+
+
+   /*const fs = require("fs");
+   const fsPromises = require("fs/promises");
+   const path = require("path");
+   const { EOL } = require("os");
+
+
+   (async () => {
+       try {
+           const file = await fsPromises.readFile(path.resolve(__dirname, "exercicioNomes.txt"));
+           
+           let nomes = file.toString("utf-8").split(EOL)
+           
+           console.log(nomes.filter(nome => nome[0] == "A"))
+
+       } catch (err) {
+           console.log(err.message);
+       }
+   })();*/
+
+
+
+
+   /*
+3) Faça um script que leia o arquivo exercioNomes.txt e utilize a biblioteca chalk (https://www.npmjs.com/package/chalk) para
+mostrar os nomes que começam com a letra A em vermelho, os nomes que começam com a letra C em azul e os
+nomes que começam com a letra D em magenta.
+*/
+
+
+(async () => {
+    try {
+        const data = await fsPromises.readFile(path.resolve(__dirname, "exercioNomes.txt"));
+
+        console.log(data.toString("utf-8"))
+    } catch (err) {
+        console.log(err.message);
+    }
+})();
