@@ -412,3 +412,41 @@ Aula 42:
                 }
                 return nomesValidos
             }
+
+
+        escrerver log:
+                (async () => {
+                    setInterval(() => {
+                        const dados = {
+                            total_memory : Math.round(os.totalmem() / 1048576) + " MB",
+                            free_memory :Math.round (os.freemem() / 1048576) + " MB",
+                            usage : Math.round((os.freemem() / os.totalmem()) * 100) + " %"
+                        }
+                        escreve(dados)
+
+                    }, 5000)    
+                })();
+            
+                async function escreve(dados){
+                    try {
+                        await fsPromises.appendFile(path.resolve(__dirname, "Log.txt"), `${os.EOL}${JSON.stringify(dados)}`)
+                    } catch (error) {
+                        console.log(error.message)
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
