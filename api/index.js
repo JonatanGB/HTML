@@ -13,6 +13,17 @@
         const app = express();
         const PORT = 3000;
 
+        //importando rotas
+        const user_routes = require("./routes/user_routes");
+
+
+        //middlewares
+        app.use(express.json());
+
+        //definindo rotas
+        app.use("/users", user_routes)
+
+
         app.get("/", (request, reponse) => {
             reponse.send("Hello World!")
         });
@@ -30,42 +41,14 @@
         });
 
         // BD
-        const users = [
-            { id: 1, name: "Pedro", email: "pedro@email.com" },
-            { id: 2, name: "João", email: "joao@email.com" },
-            { id: 3, name: "Marcos", email: "marcos@email.com" },
-            ];
 
-        // rotas de usuario "/users"
 
-        app.get("/users", (req, res) => {
-            res.json(users);
-        });
 
-        app.get("/users/:id", (req, res) => {
-            const userId = req.params.id;
-            
-             console.log(userId);
-            
-             const user = users.find(user => user.id == user_id);
-            
-             if (!user) {
-                res.status(404).json({ message: "User not found!" });
-            }
-            
-             res.json(user);
-            });
 
-        app.get("/users", (req, res) => {
-            
-        });
 
-        app.get("/users", (req, res) => {
-            
-        });
 
-        app.get("/users", (req, res) => {
-            
-        });
+
+
 
         app.listen(PORT, () => console.log("O servidor está rodando"));
+        //npm run dev
